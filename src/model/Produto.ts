@@ -38,7 +38,6 @@ export abstract class Produto {
     }
 
     public visualizar(): void{
-        console.log("VEJA ABAIXO TODOS OS NOSSOS PRODUTOS\n")
         console.log(`ID do produto: ${this._id}\n`)
         console.log(`Nome do produto: ${this._nome}\n`)
         console.log(`Preço: ${this._preco}\n`)

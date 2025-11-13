@@ -1,3 +1,4 @@
+import { colors } from "../util/Colors";
 import { Produto } from "./Produto";
 
 export class Cosmetico extends Produto{
@@ -24,9 +25,13 @@ export class Cosmetico extends Produto{
     }
 
     public visualizar(): void {
+        console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
+        console.log(colors.fg.magentastrong, "PRODUTOS\n", colors.reset)
+        console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
         super.visualizar()
         console.log(`Marca: ${this._marca}`)
         console.log(`Uso: ${this._uso}`)
+        console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
     }
 
 }
