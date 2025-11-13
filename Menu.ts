@@ -58,7 +58,9 @@ export function main(){
                 break
 
             case 2:
+                console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
                 console.log(colors.fg.greenstrong, "\nLista de todos os cosmetico cadastrado:\n", colors.reset)
+                console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
                 produtos.listarProdutos()
 
                 break

@@ -40,7 +40,7 @@ export abstract class Produto {
     public visualizar(): void{
         console.log(`ID do produto: ${this._id}\n`)
         console.log(`Nome do produto: ${this._nome}\n`)
-        console.log(`Preço: ${this._preco}\n`)
+        console.log(`Preço: R$ ${this._preco.toFixed(2)}\n`)
         console.log(`Quantidade: ${this._quantidade}\n`)
     }
 }
