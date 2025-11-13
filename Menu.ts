@@ -58,12 +58,14 @@ export function main(){
                 break
 
             case 2:
+                console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
                 console.log(colors.fg.greenstrong, "\nLista de todos os cosmetico cadastrado:\n", colors.reset)
+                console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
                 produtos.listarProdutos()
 
                 break
             case 3:
-                console.log("Digite o número da Conta: ");
+                console.log("Digite o id do produto: ");
                 id = leia.questionInt()
 
                 let produto = produtos.procurarProdutoArray(id)
