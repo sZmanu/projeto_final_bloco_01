@@ -63,7 +63,7 @@ export function main(){
 
                 break
             case 3:
-                console.log("Digite o número da Conta: ");
+                console.log("Digite o id do produto: ");
                 id = leia.questionInt()
 
                 let produto = produtos.procurarProdutoArray(id)
