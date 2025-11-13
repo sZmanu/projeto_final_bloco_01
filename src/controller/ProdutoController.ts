@@ -12,6 +12,18 @@ export class ProdutoController implements ProdutoRepository{
             produto.visualizar()
         }
     }
+
+    buscarUmProduto(id: number):void {
+        let buscaProduto = this.procurarProdutoArray(id)
+
+        if(buscaProduto != null){
+            buscaProduto.visualizar()
+        }
+        else{
+            console.log(colors.fg.redstrong, "\nO produto digitado não existe!", colors.reset)
+        }
+
+    }
     cadastrarProduto(produto: Produto): void {
         this.listaProdutos.push(produto)
     }
@@ -23,7 +35,7 @@ export class ProdutoController implements ProdutoRepository{
             console.log(colors.fg.greenstrong, "\nCosmetico Editado com sucesso!", colors.reset)
         }
         else{
-            console.log("O produto digitado não existe!")
+            console.log(colors.fg.redstrong, "\nO produto digitado não existe!", colors.reset)
         }
     }
     deletarProduto(id: number): void {
@@ -34,7 +46,7 @@ export class ProdutoController implements ProdutoRepository{
             console.log(colors.fg.greenstrong, "\nCosmetico excluido com sucesso!", colors.reset)
         }
         else{
-            console.log(`Não foi possivel localizar o produto`)
+            console.log(colors.fg.redstrong,`\nNão foi possivel localizar o produto`, colors.reset)
         }  
     }
     public gerarNumero(): number {

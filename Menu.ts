@@ -22,15 +22,16 @@ export function main(){
    
 
     while(continua){
-        console.log(colors.fg.yellowstrong, "--------------------------------------------", colors.reset)
+        console.log(colors.fg.yellowstrong, "----------------------------------------------------", colors.reset)
         console.log(colors.fg.magentastrong, "     ✨ SEJA BEM VINDO AO NOSSO ECOMMERCE ✨", colors.reset)
-        console.log(colors.fg.yellowstrong, "--------------------------------------------", colors.reset)
+        console.log(colors.fg.yellowstrong, "-----------------------------------------------------", colors.reset)
         console.log(" 1 - cadastrar um novo cosmetico")
         console.log(" 2 - Listar os cosmeticos disponíveis")
-        console.log(" 3 - Editar cosmetico existente")
-        console.log(" 4 - Excluir cosmetico existente")
-        console.log(" 5 - sair")
-        console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
+        console.log(" 3 - Procurar um cosmetico especifico")
+        console.log(" 4 - Editar cosmetico existente")
+        console.log(" 5 - Excluir cosmetico existente")
+        console.log(" 6 - sair")
+        console.log(colors.fg.yellowstrong, "----------------------------------------------------\n", colors.reset)
 
         console.log(colors.fg.cyanstrong, "Digite a opção desejada:\n", colors.reset)
         opcao = leia.questionInt()
@@ -58,13 +59,19 @@ export function main(){
                 break
 
             case 2:
-                console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
-                console.log(colors.fg.greenstrong, "\nLista de todos os cosmetico cadastrado:\n", colors.reset)
-                console.log(colors.fg.yellowstrong, "--------------------------------------------\n", colors.reset)
+                console.log(colors.fg.greenstrong, "\n--------------------------------------------", colors.reset)
+                console.log(colors.fg.magentastrong, "    Lista de todos os cosmetico cadastrado:", colors.reset)
+                console.log(colors.fg.greenstrong, "--------------------------------------------\n", colors.reset)
                 produtos.listarProdutos()
-
                 break
+
             case 3:
+                console.log("Digite o id do produto: ");
+                id = leia.questionInt()
+                produtos.buscarUmProduto(id)
+                break
+
+            case 4:
                 console.log("Digite o id do produto: ");
                 id = leia.questionInt()
 
@@ -94,19 +101,21 @@ export function main(){
                     console.log(colors.fg.red, "\nA Conta numero: " + id +
                         " não foi encontrada!", colors.reset);
                 }
-                
                 break
-            case 4:
+
+            case 5:
                 console.log("Digite o id do produto: ");
                 id = leia.questionInt()
                 produtos.deletarProduto(id)
                 break
-            case 5:
+
+            case 6:
                 console.log(colors.fg.magentastrong,"\n             Até breve, volte sempre 💕", colors.reset)
                 continua = false
                 break
+
             default:
-                console.log("Digite apenas os numeros do menu")
+                console.log(colors.fg.redstrong, "\nDigite apenas os numeros do menu", colors.reset)
 
         }
     }
